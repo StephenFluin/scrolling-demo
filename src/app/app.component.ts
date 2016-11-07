@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Infinite Scroll Demo';
+  itemList = [];
+  constructor() {
+    for (let i = 0; i < 1000000; i++) {
+      this.itemList.push({ title: `Item ${i}`, date: new Date(), id: i });
+    }
+  }
 }
